@@ -21,7 +21,7 @@ enum SCANDATA {
 
 fn main() {
     // let mut datas: Vec<csv_parse::SCANDATA> = Vec::new();
-    let mut datas = csv_parse::read_sensor_data("sensor_data_600.csv".to_string()).unwrap();
+    let mut datas = csv_parse::read_csv_data("sensor_data_600.csv".to_string()).unwrap();
     
     for item in &datas{
         println!("{:?}",item.get(SCANDATA::ir as usize).unwrap().parse::<i32>().unwrap());
